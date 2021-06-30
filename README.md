@@ -45,3 +45,5 @@ Cleaning and Transforming the US Cities Demographics Dataset
 - We can start by creating 2 separate datasets, 1) US and 2) US Race Count, by separating both race and count columns from the US demo dataset.
 - US Race Count dataset includes 'City' and 'State Code' columns, as the interface to link them to the US dataset.
 - If we were to join the two datasets, we will remove duplicate rows from the US dataset and pivot the US Race Count dataset, such that (theoretically), both datasets will have same number of rows for joining back into a single transformed table. (capstoneproject.ipynb)
+
+testest
