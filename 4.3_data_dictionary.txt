@@ -1,0 +1,26 @@
+-------
+i94date
+-------
+arrival_sasdate int PK (Primary Key)
+ - Non-immigrant arrival date in the USA
+arrival_isodate date
+ - ISO date format (YYYY-MM-DD)
+arrival_month int
+arrival_day int
+arrival_year int
+arrival_week int
+arrival_season string
+ - winter, spring, summer or autumn
+
+
+-------
+i94port
+-------
+id string PK (Primary Key)
+city string
+state string
+
+
+-------
+i94visa
+-------
