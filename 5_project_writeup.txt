@@ -1,0 +1,33 @@
+- What's the goal? What queries will you want to run? How would Spark or Airflow be incorporated? Why did you choose the model you chose?
+- Clearly state the rationale for the choice of tools and technologies for the project.
+Since the type of data we are working with is big data, and cloud technology might be required for our solution, 
+it makes it economically feasible to use Apache PySpark + Python tools that can be easily ported over to 
+Amazon Web Services, a potential cloud solution.
+
+
+- Document the steps of the process.
+Steps to the process is within the file `capstoneproject.ipynb`
+
+
+- Propose how often the data should be updated and why.
+Dimension tables only requires update when a new category is created within the I94.
+However, the I94 non-immigrant port of entry data, together with the time dimension table (i94date) can be updated once a month.
+According to https://www.usa.gov/statistics, the US Cities demographics data is updated once every 10 years (next data set might be in 2030)
+
+
+- Post your write-up and final data model in a GitHub repo.
+Github repo: https://github.com/terjnh/udacity-dend-capstone
+
+
+- Include a description of how you would approach the problem differently under the following scenarios:
+   - If the data was increased by 100x.
+     Use an AWS EMR cluster with our current Spark solution, and use S3 for data & parquet file storage.
+
+
+   - If the pipelines were run on a daily basis by 7am.
+     Apache Airflow can be used to schedule queries.
+
+
+   - If the database needed to be accessed by 100+ people.
+     The parquet files can be copied to AWS Redshift cluster where scaling of big data requirements is possible.
+     Redshift is able to handle thousands of concurrent queries executed by users.

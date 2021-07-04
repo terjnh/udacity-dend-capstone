@@ -1,8 +1,5 @@
 # Udacity Provided Project
 
-Reference:
-https://github.com/paul-data-science/Udacity_Data_Engineering_Capstone
-
 ## Project Summary
 We are given the task to study tourism behaviours and are called to clean up, process and develop a data model to catalyze the start of a project which will hopefully lead to a better interface for more efficient data collection and experimentation.
 From the data collection, the hopes is that data analysts will be able to form relationships and patterns between cities where non-immigrants visit and the demographics of these cities.
@@ -46,4 +43,23 @@ Cleaning and Transforming the US Cities Demographics Dataset
 - US Race Count dataset includes 'City' and 'State Code' columns, as the interface to link them to the US dataset.
 - If we were to join the two datasets, we will remove duplicate rows from the US dataset and pivot the US Race Count dataset, such that (theoretically), both datasets will have same number of rows for joining back into a single transformed table. (capstoneproject.ipynb)
 
-testest
+capstoneproject.ipynb contains information on cleaning all data sets needed for this capstone project.
+
+
+
+# Step 3: Define the Data Model
+Dimensional tables will be saved as parquet files, and we can implement them on columnar databases -- Star schema model.
+Star Schema makes it easier for Data Analysts / Data Scientists to apply queries with better flexibility.
+
+
+
+# Step 4: Running the ETL to model the data
+This project's data pipeline is built inside etl.py
+
+
+# Step 5: Complete the project write-up
+The project write-up can be found in `5_project_writeup.txt`
+
+
+Reference:
+https://github.com/paul-data-science/Udacity_Data_Engineering_Capstone

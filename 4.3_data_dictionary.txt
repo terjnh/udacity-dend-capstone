@@ -24,3 +24,62 @@ state string
 -------
 i94visa
 -------
+id int PK (Primary Key)
+ - i94 visa code number stating reason for immigration from i94 non-immigration data
+reason string
+
+
+-------
+i94res
+-------
+id int PK (Primary Key)
+ - i94 1 digit mode (plane, boat, etc) of travel code from i94 non-immigration data
+transport string
+
+
+
+-------
+i94non_immigrant_port_entry
+-------
+admnum int PK (Primary Key)
+ - Admission Number from i94 non-immigration data
+arrdate int FK (Foreign Key) -- i94date.arrival_sasdate
+ - arrival date in the USA (SAS date numeric field) from i94 non-immigration data
+depdate int
+ - Departure Date from the USA. It is a SAS date numeric field from i94 non-immigration data
+port_id string FK (Foreign Key) -- i94port.id
+ - 3 character code of destination USA city from i94 non-immigration data
+visa_id int FK (Foreign Key) -- i94visa.id
+ - reason for immigration from i94 non-immigration data
+res_id int FK -- i94res.id
+ - 3 digit code of nationality from i94 non-immigration data
+mode_id int FK -- i94mode.id
+ - 1 digit mode (plane, boat, etc) of travel code from i94 non-immigration data
+age int
+ - Age of non-immigrant in years from i94 non-immigration data
+gender string
+ - Non-immigrant sex from i94 non-immigration data
+cnt_of_one int
+ - count of one per row used for statistical metrics from i94 non-immigration data
+median_age float
+ - Median age of population in city and state from US cities demographics data
+male_pop int
+ - Male population of city and state from US cities demographics data
+female_pop int
+ - Female population of city and state from US cities demographics data
+ttl_pop int
+ - Total population of city and state from US cities demographics data
+foreign_born_pop int
+ - Foreign born population of city and state from US cities demographics data
+avg_household_size float
+ - Average household size of city and state from US cities demographics data
+american_indian_alaskan_native_pop int
+ - Aerican Indian population of city and state from US cities demographics data
+asian_pop int
+ - Asian population of city and state from US cities demographics data
+black_african_american_pop int
+ - Black population of city and state from US cities demographics data
+hispanic_pop int
+ - Hispanic population of city and state from US cities demographics data
+white_pop int
+ - White population of city and state from US cities demographics data
