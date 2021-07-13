@@ -1,0 +1,590 @@
+$ python3 etl.py
+21/07/13 22:10:35 WARN Utils: Your hostname, terry-VB resolves to a loopback address: 127.0.1.1; using 10.0.2.15 instead (on interface enp0s3)
+21/07/13 22:10:35 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+:: loading settings :: url = jar:file:/home/terry/.local/lib/python3.8/site-packages/pyspark/jars/ivy-2.4.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /home/terry/.ivy2/cache
+The jars for the packages stored in: /home/terry/.ivy2/jars
+org.apache.hadoop#hadoop-aws added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-e5aa0c1e-3f61-4b0f-abdf-e1b0550797d3;1.0
+        confs: [default]
+        found org.apache.hadoop#hadoop-aws;2.7.0 in central
+        found org.apache.hadoop#hadoop-common;2.7.0 in central
+        found org.apache.hadoop#hadoop-annotations;2.7.0 in central
+        found com.google.guava#guava;11.0.2 in central
+        found com.google.code.findbugs#jsr305;3.0.0 in central
+        found commons-cli#commons-cli;1.2 in central
+        found org.apache.commons#commons-math3;3.1.1 in central
+        found xmlenc#xmlenc;0.52 in central
+        found commons-httpclient#commons-httpclient;3.1 in central
+        found commons-logging#commons-logging;1.1.3 in central
+        found commons-codec#commons-codec;1.4 in central
+        found commons-io#commons-io;2.4 in central
+        found commons-net#commons-net;3.1 in central
+        found commons-collections#commons-collections;3.2.1 in central
+        found javax.servlet#servlet-api;2.5 in central
+        found org.mortbay.jetty#jetty;6.1.26 in central
+        found org.mortbay.jetty#jetty-util;6.1.26 in central
+        found com.sun.jersey#jersey-core;1.9 in central
+        found com.sun.jersey#jersey-json;1.9 in central
+        found org.codehaus.jettison#jettison;1.1 in central
+        found com.sun.xml.bind#jaxb-impl;2.2.3-1 in central
+        found javax.xml.bind#jaxb-api;2.2.2 in central
+        found javax.xml.stream#stax-api;1.0-2 in central
+        found javax.activation#activation;1.1 in central
+        found org.codehaus.jackson#jackson-core-asl;1.9.13 in central
+        found org.codehaus.jackson#jackson-mapper-asl;1.9.13 in central
+        found org.codehaus.jackson#jackson-jaxrs;1.9.13 in central
+        found org.codehaus.jackson#jackson-xc;1.9.13 in central
+        found com.sun.jersey#jersey-server;1.9 in central
+        found asm#asm;3.2 in central
+        found log4j#log4j;1.2.17 in central
+        found net.java.dev.jets3t#jets3t;0.9.0 in central
+        found org.apache.httpcomponents#httpclient;4.2.5 in central
+        found org.apache.httpcomponents#httpcore;4.2.5 in central
+        found com.jamesmurty.utils#java-xmlbuilder;0.4 in central
+        found commons-lang#commons-lang;2.6 in central
+        found commons-configuration#commons-configuration;1.6 in central
+        found commons-digester#commons-digester;1.8 in central
+        found commons-beanutils#commons-beanutils;1.7.0 in central
+        found commons-beanutils#commons-beanutils-core;1.8.0 in central
+        found org.slf4j#slf4j-api;1.7.10 in central
+        found org.apache.avro#avro;1.7.4 in central
+        found com.thoughtworks.paranamer#paranamer;2.3 in central
+        found org.xerial.snappy#snappy-java;1.0.4.1 in central
+        found org.apache.commons#commons-compress;1.4.1 in central
+        found org.tukaani#xz;1.0 in central
+        found com.google.protobuf#protobuf-java;2.5.0 in central
+        found com.google.code.gson#gson;2.2.4 in central
+        found org.apache.hadoop#hadoop-auth;2.7.0 in central
+        found org.apache.directory.server#apacheds-kerberos-codec;2.0.0-M15 in central
+        found org.apache.directory.server#apacheds-i18n;2.0.0-M15 in central
+        found org.apache.directory.api#api-asn1-api;1.0.0-M20 in central
+        found org.apache.directory.api#api-util;1.0.0-M20 in central
+        found org.apache.zookeeper#zookeeper;3.4.6 in central
+        found org.slf4j#slf4j-log4j12;1.7.10 in central
+        found io.netty#netty;3.6.2.Final in central
+        found org.apache.curator#curator-framework;2.7.1 in central
+        found org.apache.curator#curator-client;2.7.1 in central
+        found com.jcraft#jsch;0.1.42 in central
+        found org.apache.curator#curator-recipes;2.7.1 in central
+        found org.apache.htrace#htrace-core;3.1.0-incubating in central
+        found javax.servlet.jsp#jsp-api;2.1 in central
+        found jline#jline;0.9.94 in central
+        found junit#junit;4.11 in central
+        found org.hamcrest#hamcrest-core;1.3 in central
+        found com.fasterxml.jackson.core#jackson-databind;2.2.3 in central
+        found com.fasterxml.jackson.core#jackson-annotations;2.2.3 in central
+        found com.fasterxml.jackson.core#jackson-core;2.2.3 in central
+        found com.amazonaws#aws-java-sdk;1.7.4 in central
+        found joda-time#joda-time;2.10.10 in central
+        [2.10.10] joda-time#joda-time;[2.2,)
+:: resolution report :: resolve 5848ms :: artifacts dl 72ms
+        :: modules in use:
+        asm#asm;3.2 from central in [default]
+        com.amazonaws#aws-java-sdk;1.7.4 from central in [default]
+        com.fasterxml.jackson.core#jackson-annotations;2.2.3 from central in [default]
+        com.fasterxml.jackson.core#jackson-core;2.2.3 from central in [default]
+        com.fasterxml.jackson.core#jackson-databind;2.2.3 from central in [default]
+        com.google.code.findbugs#jsr305;3.0.0 from central in [default]
+        com.google.code.gson#gson;2.2.4 from central in [default]
+        com.google.guava#guava;11.0.2 from central in [default]
+        com.google.protobuf#protobuf-java;2.5.0 from central in [default]
+        com.jamesmurty.utils#java-xmlbuilder;0.4 from central in [default]
+        com.jcraft#jsch;0.1.42 from central in [default]
+        com.sun.jersey#jersey-core;1.9 from central in [default]
+        com.sun.jersey#jersey-json;1.9 from central in [default]
+        com.sun.jersey#jersey-server;1.9 from central in [default]
+        com.sun.xml.bind#jaxb-impl;2.2.3-1 from central in [default]
+        com.thoughtworks.paranamer#paranamer;2.3 from central in [default]
+        commons-beanutils#commons-beanutils;1.7.0 from central in [default]
+        commons-beanutils#commons-beanutils-core;1.8.0 from central in [default]
+        commons-cli#commons-cli;1.2 from central in [default]
+        commons-codec#commons-codec;1.4 from central in [default]
+        commons-collections#commons-collections;3.2.1 from central in [default]
+        commons-configuration#commons-configuration;1.6 from central in [default]
+        commons-digester#commons-digester;1.8 from central in [default]
+        commons-httpclient#commons-httpclient;3.1 from central in [default]
+        commons-io#commons-io;2.4 from central in [default]
+        commons-lang#commons-lang;2.6 from central in [default]
+        commons-logging#commons-logging;1.1.3 from central in [default]
+        commons-net#commons-net;3.1 from central in [default]
+        io.netty#netty;3.6.2.Final from central in [default]
+        javax.activation#activation;1.1 from central in [default]
+        javax.servlet#servlet-api;2.5 from central in [default]
+        javax.servlet.jsp#jsp-api;2.1 from central in [default]
+        javax.xml.bind#jaxb-api;2.2.2 from central in [default]
+        javax.xml.stream#stax-api;1.0-2 from central in [default]
+        jline#jline;0.9.94 from central in [default]
+        joda-time#joda-time;2.10.10 from central in [default]
+        junit#junit;4.11 from central in [default]
+        log4j#log4j;1.2.17 from central in [default]
+        net.java.dev.jets3t#jets3t;0.9.0 from central in [default]
+        org.apache.avro#avro;1.7.4 from central in [default]
+        org.apache.commons#commons-compress;1.4.1 from central in [default]
+        org.apache.commons#commons-math3;3.1.1 from central in [default]
+        org.apache.curator#curator-client;2.7.1 from central in [default]
+        org.apache.curator#curator-framework;2.7.1 from central in [default]
+        org.apache.curator#curator-recipes;2.7.1 from central in [default]
+        org.apache.directory.api#api-asn1-api;1.0.0-M20 from central in [default]
+        org.apache.directory.api#api-util;1.0.0-M20 from central in [default]
+        org.apache.directory.server#apacheds-i18n;2.0.0-M15 from central in [default]
+        org.apache.directory.server#apacheds-kerberos-codec;2.0.0-M15 from central in [default]
+        org.apache.hadoop#hadoop-annotations;2.7.0 from central in [default]
+        org.apache.hadoop#hadoop-auth;2.7.0 from central in [default]
+        org.apache.hadoop#hadoop-aws;2.7.0 from central in [default]
+        org.apache.hadoop#hadoop-common;2.7.0 from central in [default]
+        org.apache.htrace#htrace-core;3.1.0-incubating from central in [default]
+        org.apache.httpcomponents#httpclient;4.2.5 from central in [default]
+        org.apache.httpcomponents#httpcore;4.2.5 from central in [default]
+        org.apache.zookeeper#zookeeper;3.4.6 from central in [default]
+        org.codehaus.jackson#jackson-core-asl;1.9.13 from central in [default]
+        org.codehaus.jackson#jackson-jaxrs;1.9.13 from central in [default]
+        org.codehaus.jackson#jackson-mapper-asl;1.9.13 from central in [default]
+        org.codehaus.jackson#jackson-xc;1.9.13 from central in [default]
+        org.codehaus.jettison#jettison;1.1 from central in [default]
+        org.hamcrest#hamcrest-core;1.3 from central in [default]
+        org.mortbay.jetty#jetty;6.1.26 from central in [default]
+        org.mortbay.jetty#jetty-util;6.1.26 from central in [default]
+        org.slf4j#slf4j-api;1.7.10 from central in [default]
+        org.slf4j#slf4j-log4j12;1.7.10 from central in [default]
+        org.tukaani#xz;1.0 from central in [default]
+        org.xerial.snappy#snappy-java;1.0.4.1 from central in [default]
+        xmlenc#xmlenc;0.52 from central in [default]
+        ---------------------------------------------------------------------
+        |                  |            modules            ||   artifacts   |
+        |       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+        ---------------------------------------------------------------------
+        |      default     |   70  |   1   |   0   |   0   ||   70  |   0   |
+        ---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-e5aa0c1e-3f61-4b0f-abdf-e1b0550797d3
+        confs: [default]
+        0 artifacts copied, 70 already retrieved (0kB/33ms)
+21/07/13 22:10:42 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+etl.py:123: FutureWarning: Columnar iteration over characters will be deprecated in future releases.
+  i94port_df['port_city'], i94port_df['port_state']=i94port_df['port'].str.strip().str.replace("'",'').str.strip().str.split(',',1).str
+21/07/13 22:11:57 WARN package: Truncated the string representation of a plan since it was too large. This behavior can be adjusted by setting 'spark.sql.debug.maxToStringFields'.
+21/07/13 22:11:58 ERROR FileFormatWriter: Aborting job 8bfd7467-f1af-43d3-8790-dd0ef019ac5d.
+org.apache.spark.sql.catalyst.errors.package$TreeNodeException: execute, tree:
+Exchange hashpartitioning(arrival_day#433, arrival_iso_date#429, arrival_month#430, arrival_dayofweek#431, arrival_weekofyear#434, arrival_year#432, arrival_sasdate#428, 200), ENSURE_REQUIREMENTS, [id=#605]
++- *(14) HashAggregate(keys=[arrival_day#433, arrival_iso_date#429, arrival_month#430, arrival_dayofweek#431, arrival_weekofyear#434, arrival_year#432, arrival_sasdate#428], functions=[], output=[arrival_day#433, arrival_iso_date#429, arrival_month#430, arrival_dayofweek#431, arrival_weekofyear#434, arrival_year#432, arrival_sasdate#428])
+   +- *(14) Project [arrdate#274 AS arrival_sasdate#428, pythonUDF0#538 AS arrival_iso_date#429, date_format(cast(pythonUDF0#538 as timestamp), M, Some(Asia/Singapore)) AS arrival_month#430, date_format(cast(pythonUDF0#538 as timestamp), E, Some(Asia/Singapore)) AS arrival_dayofweek#431, date_format(cast(pythonUDF0#538 as timestamp), y, Some(Asia/Singapore)) AS arrival_year#432, date_format(cast(pythonUDF0#538 as timestamp), d, Some(Asia/Singapore)) AS arrival_day#433, date_format(cast(pythonUDF0#538 as timestamp), w, Some(Asia/Singapore)) AS arrival_weekofyear#434]
+      +- BatchEvalPython [<lambda>(arrdate#274)], [pythonUDF0#538]
+         +- *(13) Project [arrdate#274]
+            +- SortMergeJoin [upper(port_city#209), upper(port_state#210)], [upper(City#16), upper(State_Code#106)], LeftOuter
+               :- *(7) Sort [upper(port_city#209) ASC NULLS FIRST, upper(port_state#210) ASC NULLS FIRST], false, 0
+               :  +- Exchange hashpartitioning(upper(port_city#209), upper(port_state#210), 200), ENSURE_REQUIREMENTS, [id=#568]
+               :     +- *(6) Project [arrdate#274, port_city#209, port_state#210]
+               :        +- SortMergeJoin [i94port#222], [id#208], LeftOuter
+               :           :- *(3) Sort [i94port#222 ASC NULLS FIRST], false, 0
+               :           :  +- Exchange hashpartitioning(i94port#222, 200), ENSURE_REQUIREMENTS, [id=#555]
+               :           :     +- *(2) HashAggregate(keys=[count#279, i94mode#275, i94bir#277, i94port#222, arrdate#274, admnum#280L, depdate#276, i94visa#278, i94res#273, gender#239], functions=[], output=[i94port#222, arrdate#274])
+               :           :        +- Exchange hashpartitioning(count#279, i94mode#275, i94bir#277, i94port#222, arrdate#274, admnum#280L, depdate#276, i94visa#278, i94res#273, gender#239, 200), ENSURE_REQUIREMENTS, [id=#551]
+               :           :           +- *(1) HashAggregate(keys=[count#279, i94mode#275, i94bir#277, i94port#222, arrdate#274, admnum#280L, depdate#276, i94visa#278, i94res#273, gender#239], functions=[], output=[count#279, i94mode#275, i94bir#277, i94port#222, arrdate#274, admnum#280L, depdate#276, i94visa#278, i94res#273, gender#239])
+               :           :              +- *(1) Project [cast(i94res#221 as int) AS i94res#273, i94port#222, cast(arrdate#223 as int) AS arrdate#274, cast(i94mode#224 as int) AS i94mode#275, cast(depdate#226 as int) AS depdate#276, cast(i94bir#227 as int) AS i94bir#277, cast(i94visa#228 as int) AS i94visa#278, cast(count#229 as int) AS count#279, gender#239, cast(admnum#242 as bigint) AS admnum#280L]
+               :           :                 +- *(1) ColumnarToRow
+               :           :                    +- FileScan parquet [i94res#221,i94port#222,arrdate#223,i94mode#224,depdate#226,i94bir#227,i94visa#228,count#229,gender#239,admnum#242] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex[file:/home/terry/Desktop/DataEngineering/Capstone/datasets/sas_data], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<i94res:double,i94port:string,arrdate:double,i94mode:double,depdate:double,i94bir:double,i9...
+               :           +- *(5) Sort [id#208 ASC NULLS FIRST], false, 0
+               :              +- Exchange hashpartitioning(id#208, 200), ENSURE_REQUIREMENTS, [id=#560]
+               :                 +- *(4) Filter isnotnull(id#208)
+               :                    +- *(4) Scan ExistingRDD[id#208,port_city#209,port_state#210]
+               +- *(12) Sort [upper(City#16) ASC NULLS FIRST, upper(State_Code#106) ASC NULLS FIRST], false, 0
+                  +- Exchange hashpartitioning(upper(City#16), upper(State_Code#106), 200), ENSURE_REQUIREMENTS, [id=#592]
+                     +- *(11) Project [City#16, State Code#25 AS State_Code#106]
+                        +- *(11) BroadcastHashJoin [City#16, State Code#25], [City#80, State Code#89], Inner, BuildRight, false
+                           :- *(11) HashAggregate(keys=[Total Population#21, Female Population#20, City#16, Median Age#18, State Code#25, Foreign-born#23, Male Population#19, State#17, Average Household Size#24], functions=[], output=[City#16, State Code#25])
+                           :  +- Exchange hashpartitioning(Total Population#21, Female Population#20, City#16, Median Age#18, State Code#25, Foreign-born#23, Male Population#19, State#17, Average Household Size#24, 200), ENSURE_REQUIREMENTS, [id=#576]
+                           :     +- *(8) HashAggregate(keys=[Total Population#21, Female Population#20, City#16, Median Age#18, State Code#25, Foreign-born#23, Male Population#19, State#17, Average Household Size#24], functions=[], output=[Total Population#21, Female Population#20, City#16, Median Age#18, State Code#25, Foreign-born#23, Male Population#19, State#17, Average Household Size#24])
+                           :        +- *(8) Filter (isnotnull(City#16) AND isnotnull(State Code#25))
+                           :           +- FileScan csv [City#16,State#17,Median Age#18,Male Population#19,Female Population#20,Total Population#21,Foreign-born#23,Average Household Size#24,State Code#25] Batched: false, DataFilters: [isnotnull(City#16), isnotnull(State Code#25)], Format: CSV, Location: InMemoryFileIndex[file:/home/terry/Desktop/DataEngineering/Capstone/datasets/us-cities-demographi..., PartitionFilters: [], PushedFilters: [IsNotNull(City), IsNotNull(State Code)], ReadSchema: struct<City:string,State:string,Median Age:string,Male Population:string,Female Population:string...
+                           +- BroadcastExchange HashedRelationBroadcastMode(List(input[0, string, true], input[1, string, true]),false), [id=#587]
+                              +- *(10) HashAggregate(keys=[City#80, State Code#89], functions=[], output=[City#80, State Code#89])
+                                 +- Exchange hashpartitioning(City#80, State Code#89, 200), ENSURE_REQUIREMENTS, [id=#583]
+                                    +- *(9) HashAggregate(keys=[City#80, State Code#89], functions=[], output=[City#80, State Code#89])
+                                       +- *(9) Filter (isnotnull(City#80) AND isnotnull(State Code#89))
+                                          +- FileScan csv [City#80,State Code#89] Batched: false, DataFilters: [isnotnull(City#80), isnotnull(State Code#89)], Format: CSV, Location: InMemoryFileIndex[file:/home/terry/Desktop/DataEngineering/Capstone/datasets/us-cities-demographi..., PartitionFilters: [], PushedFilters: [IsNotNull(City), IsNotNull(State Code)], ReadSchema: struct<City:string,State Code:string>
+
+        at org.apache.spark.sql.catalyst.errors.package$.attachTree(package.scala:56)
+        at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec.doExecute(ShuffleExchangeExec.scala:163)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$execute$1(SparkPlan.scala:180)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:176)
+        at org.apache.spark.sql.execution.InputAdapter.inputRDD(WholeStageCodegenExec.scala:525)
+        at org.apache.spark.sql.execution.InputRDDCodegen.inputRDDs(WholeStageCodegenExec.scala:453)
+        at org.apache.spark.sql.execution.InputRDDCodegen.inputRDDs$(WholeStageCodegenExec.scala:452)
+        at org.apache.spark.sql.execution.InputAdapter.inputRDDs(WholeStageCodegenExec.scala:496)
+        at org.apache.spark.sql.execution.aggregate.HashAggregateExec.inputRDDs(HashAggregateExec.scala:141)
+        at org.apache.spark.sql.execution.WholeStageCodegenExec.doExecute(WholeStageCodegenExec.scala:746)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$execute$1(SparkPlan.scala:180)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:176)
+        at org.apache.spark.sql.execution.ProjectExec.doExecute(basicPhysicalOperators.scala:92)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$execute$1(SparkPlan.scala:180)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:176)
+        at org.apache.spark.sql.execution.SortExec.doExecute(SortExec.scala:112)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$execute$1(SparkPlan.scala:180)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:176)
+        at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:184)
+        at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:188)
+        at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:108)
+        at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:106)
+        at org.apache.spark.sql.execution.command.DataWritingCommandExec.doExecute(commands.scala:131)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$execute$1(SparkPlan.scala:180)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:176)
+        at org.apache.spark.sql.execution.QueryExecution.toRdd$lzycompute(QueryExecution.scala:132)
+        at org.apache.spark.sql.execution.QueryExecution.toRdd(QueryExecution.scala:131)
+        at org.apache.spark.sql.DataFrameWriter.$anonfun$runCommand$1(DataFrameWriter.scala:989)
+        at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$5(SQLExecution.scala:103)
+        at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:163)
+        at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:90)
+        at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:772)
+        at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:64)
+        at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:989)
+        at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:438)
+        at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:415)
+        at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:293)
+        at org.apache.spark.sql.DataFrameWriter.parquet(DataFrameWriter.scala:874)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+        at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+        at py4j.Gateway.invoke(Gateway.java:282)
+        at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+        at py4j.commands.CallCommand.execute(CallCommand.java:79)
+        at py4j.GatewayConnection.run(GatewayConnection.java:238)
+        at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.SparkUpgradeException: You may get a different result due to the upgrading of Spark 3.0: Fail to recognize 'w' pattern in the DateTimeFormatter. 1) You can set spark.sql.legacy.timeParserPolicy to LEGACY to restore the behavior before Spark 3.0. 2) You can form a valid datetime pattern with the guide from https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html
+        at org.apache.spark.sql.catalyst.util.DateTimeFormatterHelper$$anonfun$checkLegacyFormatter$1.applyOrElse(DateTimeFormatterHelper.scala:196)
+        at org.apache.spark.sql.catalyst.util.DateTimeFormatterHelper$$anonfun$checkLegacyFormatter$1.applyOrElse(DateTimeFormatterHelper.scala:185)
+        at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+        at org.apache.spark.sql.catalyst.util.Iso8601TimestampFormatter.validatePatternString(TimestampFormatter.scala:109)
+        at org.apache.spark.sql.catalyst.util.TimestampFormatter$.getFormatter(TimestampFormatter.scala:300)
+        at org.apache.spark.sql.catalyst.util.TimestampFormatter$.apply(TimestampFormatter.scala:333)
+        at org.apache.spark.sql.catalyst.expressions.TimestampFormatterHelper.getFormatter(datetimeExpressions.scala:72)
+        at org.apache.spark.sql.catalyst.expressions.TimestampFormatterHelper.getFormatter$(datetimeExpressions.scala:67)
+        at org.apache.spark.sql.catalyst.expressions.DateFormatClass.getFormatter(datetimeExpressions.scala:771)
+        at org.apache.spark.sql.catalyst.expressions.TimestampFormatterHelper.$anonfun$formatterOption$1(datetimeExpressions.scala:64)
+        at scala.Option.map(Option.scala:230)
+        at org.apache.spark.sql.catalyst.expressions.TimestampFormatterHelper.formatterOption(datetimeExpressions.scala:64)
+        at org.apache.spark.sql.catalyst.expressions.TimestampFormatterHelper.formatterOption$(datetimeExpressions.scala:62)
+        at org.apache.spark.sql.catalyst.expressions.DateFormatClass.formatterOption$lzycompute(datetimeExpressions.scala:771)
+        at org.apache.spark.sql.catalyst.expressions.DateFormatClass.formatterOption(datetimeExpressions.scala:771)
+        at org.apache.spark.sql.catalyst.expressions.DateFormatClass.doGenCode(datetimeExpressions.scala:790)
+        at org.apache.spark.sql.catalyst.expressions.Expression.$anonfun$genCode$3(Expression.scala:146)
+        at scala.Option.getOrElse(Option.scala:189)
+        at org.apache.spark.sql.catalyst.expressions.Expression.genCode(Expression.scala:141)
+        at org.apache.spark.sql.catalyst.expressions.Alias.genCode(namedExpressions.scala:163)
+        at org.apache.spark.sql.execution.ProjectExec.$anonfun$doConsume$2(basicPhysicalOperators.scala:73)
+        at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:238)
+        at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+        at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+        at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+        at scala.collection.TraversableLike.map(TraversableLike.scala:238)
+        at scala.collection.TraversableLike.map$(TraversableLike.scala:231)
+        at scala.collection.AbstractTraversable.map(Traversable.scala:108)
+        at org.apache.spark.sql.execution.ProjectExec.$anonfun$doConsume$1(basicPhysicalOperators.scala:73)
+        at org.apache.spark.sql.catalyst.expressions.codegen.CodegenContext.withSubExprEliminationExprs(CodeGenerator.scala:1026)
+        at org.apache.spark.sql.execution.ProjectExec.doConsume(basicPhysicalOperators.scala:73)
+        at org.apache.spark.sql.execution.CodegenSupport.consume(WholeStageCodegenExec.scala:194)
+        at org.apache.spark.sql.execution.CodegenSupport.consume$(WholeStageCodegenExec.scala:149)
+        at org.apache.spark.sql.execution.InputAdapter.consume(WholeStageCodegenExec.scala:496)
+        at org.apache.spark.sql.execution.InputRDDCodegen.doProduce(WholeStageCodegenExec.scala:483)
+        at org.apache.spark.sql.execution.InputRDDCodegen.doProduce$(WholeStageCodegenExec.scala:456)
+        at org.apache.spark.sql.execution.InputAdapter.doProduce(WholeStageCodegenExec.scala:496)
+        at org.apache.spark.sql.execution.CodegenSupport.$anonfun$produce$1(WholeStageCodegenExec.scala:95)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.CodegenSupport.produce(WholeStageCodegenExec.scala:90)
+        at org.apache.spark.sql.execution.CodegenSupport.produce$(WholeStageCodegenExec.scala:90)
+        at org.apache.spark.sql.execution.InputAdapter.produce(WholeStageCodegenExec.scala:496)
+        at org.apache.spark.sql.execution.ProjectExec.doProduce(basicPhysicalOperators.scala:54)
+        at org.apache.spark.sql.execution.CodegenSupport.$anonfun$produce$1(WholeStageCodegenExec.scala:95)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.CodegenSupport.produce(WholeStageCodegenExec.scala:90)
+        at org.apache.spark.sql.execution.CodegenSupport.produce$(WholeStageCodegenExec.scala:90)
+        at org.apache.spark.sql.execution.ProjectExec.produce(basicPhysicalOperators.scala:41)
+        at org.apache.spark.sql.execution.aggregate.HashAggregateExec.doProduceWithKeys(HashAggregateExec.scala:733)
+        at org.apache.spark.sql.execution.aggregate.HashAggregateExec.doProduce(HashAggregateExec.scala:148)
+        at org.apache.spark.sql.execution.CodegenSupport.$anonfun$produce$1(WholeStageCodegenExec.scala:95)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.CodegenSupport.produce(WholeStageCodegenExec.scala:90)
+        at org.apache.spark.sql.execution.CodegenSupport.produce$(WholeStageCodegenExec.scala:90)
+        at org.apache.spark.sql.execution.aggregate.HashAggregateExec.produce(HashAggregateExec.scala:47)
+        at org.apache.spark.sql.execution.WholeStageCodegenExec.doCodeGen(WholeStageCodegenExec.scala:655)
+        at org.apache.spark.sql.execution.WholeStageCodegenExec.doExecute(WholeStageCodegenExec.scala:718)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$execute$1(SparkPlan.scala:180)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:176)
+        at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec.inputRDD$lzycompute(ShuffleExchangeExec.scala:118)
+        at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec.inputRDD(ShuffleExchangeExec.scala:118)
+        at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec.shuffleDependency$lzycompute(ShuffleExchangeExec.scala:151)
+        at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec.shuffleDependency(ShuffleExchangeExec.scala:149)
+        at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec.$anonfun$doExecute$1(ShuffleExchangeExec.scala:166)
+        at org.apache.spark.sql.catalyst.errors.package$.attachTree(package.scala:52)
+        ... 63 more
+Caused by: java.lang.IllegalArgumentException: All week-based patterns are unsupported since Spark 3.0, detected: w, Please use the SQL function EXTRACT instead
+        at org.apache.spark.sql.catalyst.util.DateTimeFormatterHelper$.$anonfun$convertIncompatiblePattern$4(DateTimeFormatterHelper.scala:323)
+        at org.apache.spark.sql.catalyst.util.DateTimeFormatterHelper$.$anonfun$convertIncompatiblePattern$4$adapted(DateTimeFormatterHelper.scala:321)
+        at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)
+        at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+        at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+        at scala.collection.immutable.StringOps.foreach(StringOps.scala:33)
+        at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:876)
+        at org.apache.spark.sql.catalyst.util.DateTimeFormatterHelper$.$anonfun$convertIncompatiblePattern$2(DateTimeFormatterHelper.scala:321)
+        at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:238)
+        at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+        at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+        at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+        at scala.collection.TraversableLike.map(TraversableLike.scala:238)
+        at scala.collection.TraversableLike.map$(TraversableLike.scala:231)
+        at scala.collection.mutable.ArrayOps$ofRef.map(ArrayOps.scala:198)
+        at org.apache.spark.sql.catalyst.util.DateTimeFormatterHelper$.convertIncompatiblePattern(DateTimeFormatterHelper.scala:318)
+        at org.apache.spark.sql.catalyst.util.DateTimeFormatterHelper.getOrCreateFormatter(DateTimeFormatterHelper.scala:121)
+        at org.apache.spark.sql.catalyst.util.DateTimeFormatterHelper.getOrCreateFormatter$(DateTimeFormatterHelper.scala:117)
+        at org.apache.spark.sql.catalyst.util.Iso8601TimestampFormatter.getOrCreateFormatter(TimestampFormatter.scala:59)
+        at org.apache.spark.sql.catalyst.util.Iso8601TimestampFormatter.formatter$lzycompute(TimestampFormatter.scala:68)
+        at org.apache.spark.sql.catalyst.util.Iso8601TimestampFormatter.formatter(TimestampFormatter.scala:67)
+        at org.apache.spark.sql.catalyst.util.Iso8601TimestampFormatter.validatePatternString(TimestampFormatter.scala:108)
+        ... 133 more
+Traceback (most recent call last):                                              
+  File "etl.py", line 217, in <module>
+    i94date_season.write.mode("overwrite").partitionBy("arrival_year", "arrival_month").parquet('./data/i94date.parquet')
+  File "/home/terry/.local/lib/python3.8/site-packages/pyspark/sql/readwriter.py", line 1249, in parquet
+    self._jwrite.parquet(path)
+  File "/home/terry/.local/lib/python3.8/site-packages/py4j/java_gateway.py", line 1304, in __call__
+    return_value = get_return_value(
+  File "/home/terry/.local/lib/python3.8/site-packages/pyspark/sql/utils.py", line 111, in deco
+    return f(*a, **kw)
+  File "/home/terry/.local/lib/python3.8/site-packages/py4j/protocol.py", line 326, in get_return_value
+    raise Py4JJavaError(
+py4j.protocol.Py4JJavaError: An error occurred while calling o275.parquet.
+: org.apache.spark.SparkException: Job aborted.
+        at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:231)
+        at org.apache.spark.sql.execution.datasources.InsertIntoHadoopFsRelationCommand.run(InsertIntoHadoopFsRelationCommand.scala:188)
+        at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult$lzycompute(commands.scala:108)
+        at org.apache.spark.sql.execution.command.DataWritingCommandExec.sideEffectResult(commands.scala:106)
+        at org.apache.spark.sql.execution.command.DataWritingCommandExec.doExecute(commands.scala:131)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$execute$1(SparkPlan.scala:180)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:176)
+        at org.apache.spark.sql.execution.QueryExecution.toRdd$lzycompute(QueryExecution.scala:132)
+        at org.apache.spark.sql.execution.QueryExecution.toRdd(QueryExecution.scala:131)
+        at org.apache.spark.sql.DataFrameWriter.$anonfun$runCommand$1(DataFrameWriter.scala:989)
+        at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$5(SQLExecution.scala:103)
+        at org.apache.spark.sql.execution.SQLExecution$.withSQLConfPropagated(SQLExecution.scala:163)
+        at org.apache.spark.sql.execution.SQLExecution$.$anonfun$withNewExecutionId$1(SQLExecution.scala:90)
+        at org.apache.spark.sql.SparkSession.withActive(SparkSession.scala:772)
+        at org.apache.spark.sql.execution.SQLExecution$.withNewExecutionId(SQLExecution.scala:64)
+        at org.apache.spark.sql.DataFrameWriter.runCommand(DataFrameWriter.scala:989)
+        at org.apache.spark.sql.DataFrameWriter.saveToV1Source(DataFrameWriter.scala:438)
+        at org.apache.spark.sql.DataFrameWriter.saveInternal(DataFrameWriter.scala:415)
+        at org.apache.spark.sql.DataFrameWriter.save(DataFrameWriter.scala:293)
+        at org.apache.spark.sql.DataFrameWriter.parquet(DataFrameWriter.scala:874)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at py4j.reflection.MethodInvoker.invoke(MethodInvoker.java:244)
+        at py4j.reflection.ReflectionEngine.invoke(ReflectionEngine.java:357)
+        at py4j.Gateway.invoke(Gateway.java:282)
+        at py4j.commands.AbstractCommand.invokeMethod(AbstractCommand.java:132)
+        at py4j.commands.CallCommand.execute(CallCommand.java:79)
+        at py4j.GatewayConnection.run(GatewayConnection.java:238)
+        at java.lang.Thread.run(Thread.java:748)
+Caused by: org.apache.spark.sql.catalyst.errors.package$TreeNodeException: execute, tree:
+Exchange hashpartitioning(arrival_day#433, arrival_iso_date#429, arrival_month#430, arrival_dayofweek#431, arrival_weekofyear#434, arrival_year#432, arrival_sasdate#428, 200), ENSURE_REQUIREMENTS, [id=#605]
++- *(14) HashAggregate(keys=[arrival_day#433, arrival_iso_date#429, arrival_month#430, arrival_dayofweek#431, arrival_weekofyear#434, arrival_year#432, arrival_sasdate#428], functions=[], output=[arrival_day#433, arrival_iso_date#429, arrival_month#430, arrival_dayofweek#431, arrival_weekofyear#434, arrival_year#432, arrival_sasdate#428])
+   +- *(14) Project [arrdate#274 AS arrival_sasdate#428, pythonUDF0#538 AS arrival_iso_date#429, date_format(cast(pythonUDF0#538 as timestamp), M, Some(Asia/Singapore)) AS arrival_month#430, date_format(cast(pythonUDF0#538 as timestamp), E, Some(Asia/Singapore)) AS arrival_dayofweek#431, date_format(cast(pythonUDF0#538 as timestamp), y, Some(Asia/Singapore)) AS arrival_year#432, date_format(cast(pythonUDF0#538 as timestamp), d, Some(Asia/Singapore)) AS arrival_day#433, date_format(cast(pythonUDF0#538 as timestamp), w, Some(Asia/Singapore)) AS arrival_weekofyear#434]
+      +- BatchEvalPython [<lambda>(arrdate#274)], [pythonUDF0#538]
+         +- *(13) Project [arrdate#274]
+            +- SortMergeJoin [upper(port_city#209), upper(port_state#210)], [upper(City#16), upper(State_Code#106)], LeftOuter
+               :- *(7) Sort [upper(port_city#209) ASC NULLS FIRST, upper(port_state#210) ASC NULLS FIRST], false, 0
+               :  +- Exchange hashpartitioning(upper(port_city#209), upper(port_state#210), 200), ENSURE_REQUIREMENTS, [id=#568]
+               :     +- *(6) Project [arrdate#274, port_city#209, port_state#210]
+               :        +- SortMergeJoin [i94port#222], [id#208], LeftOuter
+               :           :- *(3) Sort [i94port#222 ASC NULLS FIRST], false, 0
+               :           :  +- Exchange hashpartitioning(i94port#222, 200), ENSURE_REQUIREMENTS, [id=#555]
+               :           :     +- *(2) HashAggregate(keys=[count#279, i94mode#275, i94bir#277, i94port#222, arrdate#274, admnum#280L, depdate#276, i94visa#278, i94res#273, gender#239], functions=[], output=[i94port#222, arrdate#274])
+               :           :        +- Exchange hashpartitioning(count#279, i94mode#275, i94bir#277, i94port#222, arrdate#274, admnum#280L, depdate#276, i94visa#278, i94res#273, gender#239, 200), ENSURE_REQUIREMENTS, [id=#551]
+               :           :           +- *(1) HashAggregate(keys=[count#279, i94mode#275, i94bir#277, i94port#222, arrdate#274, admnum#280L, depdate#276, i94visa#278, i94res#273, gender#239], functions=[], output=[count#279, i94mode#275, i94bir#277, i94port#222, arrdate#274, admnum#280L, depdate#276, i94visa#278, i94res#273, gender#239])
+               :           :              +- *(1) Project [cast(i94res#221 as int) AS i94res#273, i94port#222, cast(arrdate#223 as int) AS arrdate#274, cast(i94mode#224 as int) AS i94mode#275, cast(depdate#226 as int) AS depdate#276, cast(i94bir#227 as int) AS i94bir#277, cast(i94visa#228 as int) AS i94visa#278, cast(count#229 as int) AS count#279, gender#239, cast(admnum#242 as bigint) AS admnum#280L]
+               :           :                 +- *(1) ColumnarToRow
+               :           :                    +- FileScan parquet [i94res#221,i94port#222,arrdate#223,i94mode#224,depdate#226,i94bir#227,i94visa#228,count#229,gender#239,admnum#242] Batched: true, DataFilters: [], Format: Parquet, Location: InMemoryFileIndex[file:/home/terry/Desktop/DataEngineering/Capstone/datasets/sas_data], PartitionFilters: [], PushedFilters: [], ReadSchema: struct<i94res:double,i94port:string,arrdate:double,i94mode:double,depdate:double,i94bir:double,i9...
+               :           +- *(5) Sort [id#208 ASC NULLS FIRST], false, 0
+               :              +- Exchange hashpartitioning(id#208, 200), ENSURE_REQUIREMENTS, [id=#560]
+               :                 +- *(4) Filter isnotnull(id#208)
+               :                    +- *(4) Scan ExistingRDD[id#208,port_city#209,port_state#210]
+               +- *(12) Sort [upper(City#16) ASC NULLS FIRST, upper(State_Code#106) ASC NULLS FIRST], false, 0
+                  +- Exchange hashpartitioning(upper(City#16), upper(State_Code#106), 200), ENSURE_REQUIREMENTS, [id=#592]
+                     +- *(11) Project [City#16, State Code#25 AS State_Code#106]
+                        +- *(11) BroadcastHashJoin [City#16, State Code#25], [City#80, State Code#89], Inner, BuildRight, false
+                           :- *(11) HashAggregate(keys=[Total Population#21, Female Population#20, City#16, Median Age#18, State Code#25, Foreign-born#23, Male Population#19, State#17, Average Household Size#24], functions=[], output=[City#16, State Code#25])
+                           :  +- Exchange hashpartitioning(Total Population#21, Female Population#20, City#16, Median Age#18, State Code#25, Foreign-born#23, Male Population#19, State#17, Average Household Size#24, 200), ENSURE_REQUIREMENTS, [id=#576]
+                           :     +- *(8) HashAggregate(keys=[Total Population#21, Female Population#20, City#16, Median Age#18, State Code#25, Foreign-born#23, Male Population#19, State#17, Average Household Size#24], functions=[], output=[Total Population#21, Female Population#20, City#16, Median Age#18, State Code#25, Foreign-born#23, Male Population#19, State#17, Average Household Size#24])
+                           :        +- *(8) Filter (isnotnull(City#16) AND isnotnull(State Code#25))
+                           :           +- FileScan csv [City#16,State#17,Median Age#18,Male Population#19,Female Population#20,Total Population#21,Foreign-born#23,Average Household Size#24,State Code#25] Batched: false, DataFilters: [isnotnull(City#16), isnotnull(State Code#25)], Format: CSV, Location: InMemoryFileIndex[file:/home/terry/Desktop/DataEngineering/Capstone/datasets/us-cities-demographi..., PartitionFilters: [], PushedFilters: [IsNotNull(City), IsNotNull(State Code)], ReadSchema: struct<City:string,State:string,Median Age:string,Male Population:string,Female Population:string...
+                           +- BroadcastExchange HashedRelationBroadcastMode(List(input[0, string, true], input[1, string, true]),false), [id=#587]
+                              +- *(10) HashAggregate(keys=[City#80, State Code#89], functions=[], output=[City#80, State Code#89])
+                                 +- Exchange hashpartitioning(City#80, State Code#89, 200), ENSURE_REQUIREMENTS, [id=#583]
+                                    +- *(9) HashAggregate(keys=[City#80, State Code#89], functions=[], output=[City#80, State Code#89])
+                                       +- *(9) Filter (isnotnull(City#80) AND isnotnull(State Code#89))
+                                          +- FileScan csv [City#80,State Code#89] Batched: false, DataFilters: [isnotnull(City#80), isnotnull(State Code#89)], Format: CSV, Location: InMemoryFileIndex[file:/home/terry/Desktop/DataEngineering/Capstone/datasets/us-cities-demographi..., PartitionFilters: [], PushedFilters: [IsNotNull(City), IsNotNull(State Code)], ReadSchema: struct<City:string,State Code:string>
+
+        at org.apache.spark.sql.catalyst.errors.package$.attachTree(package.scala:56)
+        at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec.doExecute(ShuffleExchangeExec.scala:163)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$execute$1(SparkPlan.scala:180)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:176)
+        at org.apache.spark.sql.execution.InputAdapter.inputRDD(WholeStageCodegenExec.scala:525)
+        at org.apache.spark.sql.execution.InputRDDCodegen.inputRDDs(WholeStageCodegenExec.scala:453)
+        at org.apache.spark.sql.execution.InputRDDCodegen.inputRDDs$(WholeStageCodegenExec.scala:452)
+        at org.apache.spark.sql.execution.InputAdapter.inputRDDs(WholeStageCodegenExec.scala:496)
+        at org.apache.spark.sql.execution.aggregate.HashAggregateExec.inputRDDs(HashAggregateExec.scala:141)
+        at org.apache.spark.sql.execution.WholeStageCodegenExec.doExecute(WholeStageCodegenExec.scala:746)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$execute$1(SparkPlan.scala:180)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:176)
+        at org.apache.spark.sql.execution.ProjectExec.doExecute(basicPhysicalOperators.scala:92)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$execute$1(SparkPlan.scala:180)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:176)
+        at org.apache.spark.sql.execution.SortExec.doExecute(SortExec.scala:112)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$execute$1(SparkPlan.scala:180)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:176)
+        at org.apache.spark.sql.execution.datasources.FileFormatWriter$.write(FileFormatWriter.scala:184)
+        ... 33 more
+Caused by: org.apache.spark.SparkUpgradeException: You may get a different result due to the upgrading of Spark 3.0: Fail to recognize 'w' pattern in the DateTimeFormatter. 1) You can set spark.sql.legacy.timeParserPolicy to LEGACY to restore the behavior before Spark 3.0. 2) You can form a valid datetime pattern with the guide from https://spark.apache.org/docs/latest/sql-ref-datetime-pattern.html
+        at org.apache.spark.sql.catalyst.util.DateTimeFormatterHelper$$anonfun$checkLegacyFormatter$1.applyOrElse(DateTimeFormatterHelper.scala:196)
+        at org.apache.spark.sql.catalyst.util.DateTimeFormatterHelper$$anonfun$checkLegacyFormatter$1.applyOrElse(DateTimeFormatterHelper.scala:185)
+        at scala.runtime.AbstractPartialFunction.apply(AbstractPartialFunction.scala:38)
+        at org.apache.spark.sql.catalyst.util.Iso8601TimestampFormatter.validatePatternString(TimestampFormatter.scala:109)
+        at org.apache.spark.sql.catalyst.util.TimestampFormatter$.getFormatter(TimestampFormatter.scala:300)
+        at org.apache.spark.sql.catalyst.util.TimestampFormatter$.apply(TimestampFormatter.scala:333)
+        at org.apache.spark.sql.catalyst.expressions.TimestampFormatterHelper.getFormatter(datetimeExpressions.scala:72)
+        at org.apache.spark.sql.catalyst.expressions.TimestampFormatterHelper.getFormatter$(datetimeExpressions.scala:67)
+        at org.apache.spark.sql.catalyst.expressions.DateFormatClass.getFormatter(datetimeExpressions.scala:771)
+        at org.apache.spark.sql.catalyst.expressions.TimestampFormatterHelper.$anonfun$formatterOption$1(datetimeExpressions.scala:64)
+        at scala.Option.map(Option.scala:230)
+        at org.apache.spark.sql.catalyst.expressions.TimestampFormatterHelper.formatterOption(datetimeExpressions.scala:64)
+        at org.apache.spark.sql.catalyst.expressions.TimestampFormatterHelper.formatterOption$(datetimeExpressions.scala:62)
+        at org.apache.spark.sql.catalyst.expressions.DateFormatClass.formatterOption$lzycompute(datetimeExpressions.scala:771)
+        at org.apache.spark.sql.catalyst.expressions.DateFormatClass.formatterOption(datetimeExpressions.scala:771)
+        at org.apache.spark.sql.catalyst.expressions.DateFormatClass.doGenCode(datetimeExpressions.scala:790)
+        at org.apache.spark.sql.catalyst.expressions.Expression.$anonfun$genCode$3(Expression.scala:146)
+        at scala.Option.getOrElse(Option.scala:189)
+        at org.apache.spark.sql.catalyst.expressions.Expression.genCode(Expression.scala:141)
+        at org.apache.spark.sql.catalyst.expressions.Alias.genCode(namedExpressions.scala:163)
+        at org.apache.spark.sql.execution.ProjectExec.$anonfun$doConsume$2(basicPhysicalOperators.scala:73)
+        at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:238)
+        at scala.collection.mutable.ResizableArray.foreach(ResizableArray.scala:62)
+        at scala.collection.mutable.ResizableArray.foreach$(ResizableArray.scala:55)
+        at scala.collection.mutable.ArrayBuffer.foreach(ArrayBuffer.scala:49)
+        at scala.collection.TraversableLike.map(TraversableLike.scala:238)
+        at scala.collection.TraversableLike.map$(TraversableLike.scala:231)
+        at scala.collection.AbstractTraversable.map(Traversable.scala:108)
+        at org.apache.spark.sql.execution.ProjectExec.$anonfun$doConsume$1(basicPhysicalOperators.scala:73)
+        at org.apache.spark.sql.catalyst.expressions.codegen.CodegenContext.withSubExprEliminationExprs(CodeGenerator.scala:1026)
+        at org.apache.spark.sql.execution.ProjectExec.doConsume(basicPhysicalOperators.scala:73)
+        at org.apache.spark.sql.execution.CodegenSupport.consume(WholeStageCodegenExec.scala:194)
+        at org.apache.spark.sql.execution.CodegenSupport.consume$(WholeStageCodegenExec.scala:149)
+        at org.apache.spark.sql.execution.InputAdapter.consume(WholeStageCodegenExec.scala:496)
+        at org.apache.spark.sql.execution.InputRDDCodegen.doProduce(WholeStageCodegenExec.scala:483)
+        at org.apache.spark.sql.execution.InputRDDCodegen.doProduce$(WholeStageCodegenExec.scala:456)
+        at org.apache.spark.sql.execution.InputAdapter.doProduce(WholeStageCodegenExec.scala:496)
+        at org.apache.spark.sql.execution.CodegenSupport.$anonfun$produce$1(WholeStageCodegenExec.scala:95)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.CodegenSupport.produce(WholeStageCodegenExec.scala:90)
+        at org.apache.spark.sql.execution.CodegenSupport.produce$(WholeStageCodegenExec.scala:90)
+        at org.apache.spark.sql.execution.InputAdapter.produce(WholeStageCodegenExec.scala:496)
+        at org.apache.spark.sql.execution.ProjectExec.doProduce(basicPhysicalOperators.scala:54)
+        at org.apache.spark.sql.execution.CodegenSupport.$anonfun$produce$1(WholeStageCodegenExec.scala:95)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.CodegenSupport.produce(WholeStageCodegenExec.scala:90)
+        at org.apache.spark.sql.execution.CodegenSupport.produce$(WholeStageCodegenExec.scala:90)
+        at org.apache.spark.sql.execution.ProjectExec.produce(basicPhysicalOperators.scala:41)
+        at org.apache.spark.sql.execution.aggregate.HashAggregateExec.doProduceWithKeys(HashAggregateExec.scala:733)
+        at org.apache.spark.sql.execution.aggregate.HashAggregateExec.doProduce(HashAggregateExec.scala:148)
+        at org.apache.spark.sql.execution.CodegenSupport.$anonfun$produce$1(WholeStageCodegenExec.scala:95)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.CodegenSupport.produce(WholeStageCodegenExec.scala:90)
+        at org.apache.spark.sql.execution.CodegenSupport.produce$(WholeStageCodegenExec.scala:90)
+        at org.apache.spark.sql.execution.aggregate.HashAggregateExec.produce(HashAggregateExec.scala:47)
+        at org.apache.spark.sql.execution.WholeStageCodegenExec.doCodeGen(WholeStageCodegenExec.scala:655)
+        at org.apache.spark.sql.execution.WholeStageCodegenExec.doExecute(WholeStageCodegenExec.scala:718)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$execute$1(SparkPlan.scala:180)
+        at org.apache.spark.sql.execution.SparkPlan.$anonfun$executeQuery$1(SparkPlan.scala:218)
+        at org.apache.spark.rdd.RDDOperationScope$.withScope(RDDOperationScope.scala:151)
+        at org.apache.spark.sql.execution.SparkPlan.executeQuery(SparkPlan.scala:215)
+        at org.apache.spark.sql.execution.SparkPlan.execute(SparkPlan.scala:176)
+        at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec.inputRDD$lzycompute(ShuffleExchangeExec.scala:118)
+        at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec.inputRDD(ShuffleExchangeExec.scala:118)
+        at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec.shuffleDependency$lzycompute(ShuffleExchangeExec.scala:151)
+        at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec.shuffleDependency(ShuffleExchangeExec.scala:149)
+        at org.apache.spark.sql.execution.exchange.ShuffleExchangeExec.$anonfun$doExecute$1(ShuffleExchangeExec.scala:166)
+        at org.apache.spark.sql.catalyst.errors.package$.attachTree(package.scala:52)
+        ... 63 more
+Caused by: java.lang.IllegalArgumentException: All week-based patterns are unsupported since Spark 3.0, detected: w, Please use the SQL function EXTRACT instead
+        at org.apache.spark.sql.catalyst.util.DateTimeFormatterHelper$.$anonfun$convertIncompatiblePattern$4(DateTimeFormatterHelper.scala:323)
+        at org.apache.spark.sql.catalyst.util.DateTimeFormatterHelper$.$anonfun$convertIncompatiblePattern$4$adapted(DateTimeFormatterHelper.scala:321)
+        at scala.collection.TraversableLike$WithFilter.$anonfun$foreach$1(TraversableLike.scala:877)
+        at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+        at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+        at scala.collection.immutable.StringOps.foreach(StringOps.scala:33)
+        at scala.collection.TraversableLike$WithFilter.foreach(TraversableLike.scala:876)
+        at org.apache.spark.sql.catalyst.util.DateTimeFormatterHelper$.$anonfun$convertIncompatiblePattern$2(DateTimeFormatterHelper.scala:321)
+        at scala.collection.TraversableLike.$anonfun$map$1(TraversableLike.scala:238)
+        at scala.collection.IndexedSeqOptimized.foreach(IndexedSeqOptimized.scala:36)
+        at scala.collection.IndexedSeqOptimized.foreach$(IndexedSeqOptimized.scala:33)
+        at scala.collection.mutable.ArrayOps$ofRef.foreach(ArrayOps.scala:198)
+        at scala.collection.TraversableLike.map(TraversableLike.scala:238)
+        at scala.collection.TraversableLike.map$(TraversableLike.scala:231)
+        at scala.collection.mutable.ArrayOps$ofRef.map(ArrayOps.scala:198)
+        at org.apache.spark.sql.catalyst.util.DateTimeFormatterHelper$.convertIncompatiblePattern(DateTimeFormatterHelper.scala:318)
+        at org.apache.spark.sql.catalyst.util.DateTimeFormatterHelper.getOrCreateFormatter(DateTimeFormatterHelper.scala:121)
+        at org.apache.spark.sql.catalyst.util.DateTimeFormatterHelper.getOrCreateFormatter$(DateTimeFormatterHelper.scala:117)
+        at org.apache.spark.sql.catalyst.util.Iso8601TimestampFormatter.getOrCreateFormatter(TimestampFormatter.scala:59)
+        at org.apache.spark.sql.catalyst.util.Iso8601TimestampFormatter.formatter$lzycompute(TimestampFormatter.scala:68)
+        at org.apache.spark.sql.catalyst.util.Iso8601TimestampFormatter.formatter(TimestampFormatter.scala:67)
+        at org.apache.spark.sql.catalyst.util.Iso8601TimestampFormatter.validatePatternString(TimestampFormatter.scala:108)
+        ... 133 more

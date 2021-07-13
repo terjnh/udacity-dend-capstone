@@ -63,3 +63,25 @@ The project write-up can be found in `5_project_writeup.txt`
 
 Reference:
 https://github.com/paul-data-science/Udacity_Data_Engineering_Capstone
+
+
+
+
+
+# Addressing Feedback:
+To pass this specification, please also justify the choice of the data model. Why do you use star schema? Does it have any advantage compared to other schemas?
+- Star schema is simpler than JOIN logic required to retrieve data from a normalized transactional schema
+- When compared to highly normalized schemas, star schema simplifies common business reporting logic
+- Star schemas provide better query performance for read-only reporting applications, compared to highly normalized schemas
+- Simpler queries from star schemas provide improved performance for aggregation operations
+
+Running etl.py:
+- Run was executed with this log: etl-run-log.txt
+- Parquet files were generated within /data
+- Grouped code into functions
+
+Data quality checks in capstoneproject.ipynb:
+- Refactored code, grouping quality checks into functions.
+
+Sample query if found in `capstoneproject.ipynb`
+- Database Diagram found in `databasediagram1.PNG`
